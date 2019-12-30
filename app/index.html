@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html ng-app="FindingFalcone">
+<head>
+    <meta charset="utf-8">
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <title>Finding Falcone</title> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+    <!--CSS FILES-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!--SCRIPTS-->
+    <script type="text/javascript" src="assets/libs/angular.min.js"></script>
+    <script type="text/javascript" src="assets/libs/angular-route.min.js"></script>
+
+    <!--APP-->
+    <script type="text/javascript" src="assets/js/app.js"></script>
+
+    <!--SERVICES-->
+    <script type="text/javascript" src="assets/js/falcone.service.js"></script>
+
+    <!--CONTROLLERS-->
+    <script type="text/javascript" src="components/findfalcone/findfalcone.controller.js"></script>
+    <script type="text/javascript" src="components/report/report.controller.js"></script>
+
+
+</head>
+
+<body ng-cloak class="ng-cloak">
+    <div class="mainContainer row">
+        <ng-view></ng-view>
+    </div>
+</body>
+</html>
