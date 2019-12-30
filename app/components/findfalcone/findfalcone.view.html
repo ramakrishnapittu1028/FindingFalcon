@@ -1,7 +1,79 @@
 <div ng-include="'shared/topbar/topbar.view.html'"></div>
 
-<div ng-include="'shared/sidebar/sidebar.view.html'"></div>
+<div class="container-fluid main-body-container">
+    <div ng-include="'shared/sidebar/sidebar.view.html'"></div>
+    <div class="page-body">
+        <div class="page-heading">
+            <h3>Finding Falcone!</h3>
+        </div>
 
-<div>
-    <span>FIND FALCONE PAGE CONTENT HERE</span>
+        <div class="page-content">
+            <div class="select-planets-label row">
+                <span>Select planets you want to search in:</span>
+            </div>
+            <div class="dropdown-container">
+                <div class="col-sm-3">
+                    <div class="dest-container">
+                        <label>Destination 1</label>
+                        <input type="text" name="dest1" id="dest1" ng-model="vm.selectedPlanets[0]" placeholder="Destination 1" typeahead-editable="false" typeahead-min-length="0"
+                            typeahead-append-to-body="false" uib-typeahead="planet.name for planet in vm.planets | filter:$viewValue"
+                            typeahead-on-select="vm.onSelectDestination($item, item)" />
+                    </div>
+                    <div class="vehicle-container" ng-show="vm.selectedPlanets[0]">
+                        <label><input type="radio" name="vehicle1" ng-model="vm.selectedVehicles[0]" ng-value="vm.vehicles[0]" /> {{vm.vehicles[0].name}}</label>
+                        <label><input type="radio" name="vehicle1" ng-model="vm.selectedVehicles[0]" ng-value="vm.vehicles[1]" /> {{vm.vehicles[1].name}}</label>
+                        <label><input type="radio" name="vehicle1" ng-model="vm.selectedVehicles[0]" ng-value="vm.vehicles[2]" /> {{vm.vehicles[2].name}}</label>
+                        <label><input type="radio" name="vehicle1" ng-model="vm.selectedVehicles[0]" ng-value="vm.vehicles[3]" /> {{vm.vehicles[3].name}}</label>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="dest-container">
+                        <label>Destination 2</label>
+                        <input type="text" name="dest2" id="dest2" ng-model="vm.selectedPlanets[1]" placeholder="Destination 2" typeahead-editable="false" typeahead-min-length="0"
+                            typeahead-append-to-body="false" uib-typeahead="planet.name for planet in vm.planets | filter:$viewValue"
+                            typeahead-on-select="vm.onSelectDestination($item, item)" />
+                    </div>
+                    <div class="vehicle-container" ng-show="vm.selectedPlanets[1]">
+                        <label><input type="radio" name="vehicle2" ng-model="vm.selectedVehicles[1]" ng-value="vm.vehicles[0]" /> {{vm.vehicles[0].name}}</label>
+                        <label><input type="radio" name="vehicle2" ng-model="vm.selectedVehicles[1]" ng-value="vm.vehicles[1]" /> {{vm.vehicles[1].name}}</label>
+                        <label><input type="radio" name="vehicle2" ng-model="vm.selectedVehicles[1]" ng-value="vm.vehicles[2]" /> {{vm.vehicles[2].name}}</label>
+                        <label><input type="radio" name="vehicle2" ng-model="vm.selectedVehicles[1]" ng-value="vm.vehicles[3]" /> {{vm.vehicles[3].name}}</label>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="dest-container">
+                        <label>Destination 3</label>
+                        <input type="text" name="dest3" id="dest3" ng-model="vm.selectedPlanets[2]" placeholder="Destination 3" typeahead-editable="false"
+                            typeahead-min-length="0" typeahead-append-to-body="false" uib-typeahead="planet.name for planet in vm.planets | filter:$viewValue"
+                            typeahead-on-select="vm.onSelectDestination($item, item)" />
+                    </div>
+                    <div class="vehicle-container" ng-show="vm.selectedPlanets[2]">
+                        <label><input type="radio" name="vehicle3" ng-model="vm.selectedVehicles[2]" ng-value="vm.vehicles[0]" /> {{vm.vehicles[0].name}}</label>
+                        <label><input type="radio" name="vehicle3" ng-model="vm.selectedVehicles[2]" ng-value="vm.vehicles[1]" /> {{vm.vehicles[1].name}}</label>
+                        <label><input type="radio" name="vehicle3" ng-model="vm.selectedVehicles[2]" ng-value="vm.vehicles[2]" /> {{vm.vehicles[2].name}}</label>
+                        <label><input type="radio" name="vehicle3" ng-model="vm.selectedVehicles[2]" ng-value="vm.vehicles[3]" /> {{vm.vehicles[3].name}}</label>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="dest-container">
+                        <label>Destination 4</label>
+                        <input type="text" name="dest4" id="dest4" ng-model="vm.selectedPlanets[3]" placeholder="Destination 4" typeahead-editable="false"
+                            typeahead-min-length="0" typeahead-append-to-body="false" uib-typeahead="planet.name for planet in vm.planets | filter:$viewValue"
+                            typeahead-on-select="vm.onSelectDestination($item, item)" />
+                    </div>
+                    <div class="vehicle-container" ng-show="vm.selectedPlanets[3]">
+                        <label><input type="radio" name="vehicle4" ng-model="vm.selectedVehicles[3]" ng-value="vm.vehicles[0]" /> {{vm.vehicles[0].name}}</label>
+                        <label><input type="radio" name="vehicle4" ng-model="vm.selectedVehicles[3]" ng-value="vm.vehicles[1]" /> {{vm.vehicles[1].name}}</label>
+                        <label><input type="radio" name="vehicle4" ng-model="vm.selectedVehicles[3]" ng-value="vm.vehicles[2]" /> {{vm.vehicles[2].name}}</label>
+                        <label><input type="radio" name="vehicle4" ng-model="vm.selectedVehicles[3]" ng-value="vm.vehicles[3]" /> {{vm.vehicles[3].name}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button class="btn btn-success" type="submit" ng-click="vm.findFalcone()"> Find Falcone </button>
+            </div>
+        </div>
+    </div>
+
 </div>

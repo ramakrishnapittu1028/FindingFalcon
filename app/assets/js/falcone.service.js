@@ -5,8 +5,8 @@
         .module('FindingFalcone')
         .factory('FalconeService', FalconeService);
 
-    FalconeService.$inject = ['$http', 'APIURL'];
-    function FalconeService($http, APIURL) {
+    FalconeService.$inject = ['$http', '$q'];
+    function FalconeService($http, $q) {
         var service = {};
         service.getToken = getToken;
         service.getPlanets = getPlanets;
@@ -15,25 +15,54 @@
         return service;
 
         function getToken(){
+            var def = $q.defer();
             var request = {method: 'POST',
                 url: 'https://findfalcone.herokuapp.com/token',
                 headers: { 'accept': 'application/json' }};
-            return $http.post(request);
+            $http(request)
+            .success(function(response){
+                def.resolve(response);
+            }).error(function(error){
+                def.reject(error);
+            });
+            return def.promise;
         }
 
         function getPlanets(){
-            return $http.get('https://findfalcone.herokuapp.com/planets');
+            var def = $q.defer();
+            $http.get('https://findfalcone.herokuapp.com/planets')
+            .success(function(response){
+                def.resolve(response);
+            }).error(function(error){
+                def.reject(error);
+            });
+            return def.promise;
         }
 
         function getVehicles(){
-            return $http.get('https://findfalcone.herokuapp.com/vehicles');
+            var def = $q.defer();
+            $http.get('https://findfalcone.herokuapp.com/vehicles')
+            .success(function(response){
+                def.resolve(response);
+            }).error(function(error){
+                def.reject(error);
+            });
+            return def.promise;
         }
 
         function findFalcone(reqBody){
+            var def = $q.defer();
             var request = {method: 'POST',
                 url: 'https://findfalcone.herokuapp.com/find',
-                headers: { 'accept': 'application/json', 'content-type': 'application/json' }};
-            return $http.post(request, reqBody);
+                headers: { 'Accept': 'application/json', 'Content-type': 'application/json' },
+                body: reqBody};
+            $http(request)
+            .success(function(response){
+                def.resolve(response);
+            }).error(function(error){
+                def.reject(error);
+            });
+            return def.promise;
         }
     }
 })();

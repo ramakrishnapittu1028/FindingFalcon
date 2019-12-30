@@ -1,0 +1,25 @@
+
+.sidebar-container{
+    width: 80px;
+    position: fixed;
+    height: 100%;
+    padding: 0;
+}
+.main-body-container{
+    padding: 0;
+}
+.page-body {
+    margin-left: 80px;
+}
+.top-banner-container{
+    padding: 0;
+    height: 50px;
+}
+.page-heading {
+    margin: 0 auto;
+    text-align: center;
+}
+.select-planets-label {
+    padding: 15px;
+    text-align: center;
+}

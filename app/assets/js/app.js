@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('FindingFalcone', ['ngRoute'])
+        .module('FindingFalcone', ['ngRoute', 'ui.bootstrap', 'ngSanitize'])
         .config(config);
 
     config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider'];

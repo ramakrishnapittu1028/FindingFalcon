@@ -14,11 +14,24 @@
 	<meta http-equiv="Expires" content="0" />
 
     <!--CSS FILES-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <!--SCRIPTS-->
-    <script type="text/javascript" src="assets/libs/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-touch.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+
+    <!--<script type="text/javascript" src="assets/libs/angular.min.js"></script>
     <script type="text/javascript" src="assets/libs/angular-route.min.js"></script>
+    <script type="text/javascript" src="assets/libs/angular-animate.min.js"></script>
+    <script type="text/javascript" src="assets/libs/angular-touch.min.js"></script>-->
+    
 
     <!--APP-->
     <script type="text/javascript" src="assets/js/app.js"></script>
@@ -34,7 +47,7 @@
 </head>
 
 <body ng-cloak class="ng-cloak">
-    <div class="mainContainer row">
+    <div class="mainContainer">
         <ng-view></ng-view>
     </div>
 </body>
